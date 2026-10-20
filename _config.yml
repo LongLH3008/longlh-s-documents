@@ -1,7 +1,5 @@
 title: TECHNIQUE
 description: Kho ghi chú kỹ thuật
-theme: jekyll-theme-minimal
-
 plugins:
   - jekyll-optional-front-matter
   - jekyll-default-layout
@@ -18,7 +16,7 @@ relative_links:
 
 titles_from_headings:
   enabled: true
-  strip_title: true
+  strip_title: false
   collections: false
 
 exclude:

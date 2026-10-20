@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.url == '/' or page.title == nil %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <nav>
+        <a href="{{ '/fe/' | relative_url }}">FE</a>
+        <a href="{{ '/be/' | relative_url }}">BE</a>
+        <a href="{{ '/db/' | relative_url }}">DB</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="content">
+      {{ content }}
+    </article>
+  </main>
+</body>
+</html>
