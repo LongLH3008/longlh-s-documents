@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
   <title>{% if page.url == '/' or page.title == nil %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
@@ -24,42 +25,20 @@
       {{ content }}
     </article>
 {% if page.url == '/' %}
-    {%- comment -%} Trang chủ: danh sách thư mục trong index.md bị ẩn bằng CSS, thay bằng thẻ tự sinh từ các trang trong từng thư mục. {%- endcomment -%}
-    <div class="search">
-      <input id="q" type="search" placeholder="Tìm tài liệu..." autocomplete="off" aria-label="Tìm tài liệu">
-    </div>
-    <div class="cards">
+    {%- comment -%} Trang chủ: danh sách thư mục trong index.md bị ẩn bằng CSS, thay bằng danh sách bài tự sinh từ từng thư mục. {%- endcomment -%}
+    <div class="home-list">
       {%- for folder in site.sections -%}
         {%- assign dir = '/' | append: folder | append: '/' -%}
         {%- assign idx = site.pages | where: 'url', dir | first -%}
         {%- assign docs = site.pages | where: 'dir', dir | where_exp: 'd', "d.name != 'index.md'" | sort: 'title' -%}
-      <section class="card" data-card>
-        <h2><a href="{{ dir | relative_url }}">{{ idx.title | default: folder }}</a><span class="count">{{ docs.size }}</span></h2>
-        <ul>
-          {%- for d in docs -%}
-          <li data-doc><a href="{{ d.url | relative_url }}">{{ d.title }}</a></li>
-          {%- endfor -%}
-        </ul>
-      </section>
+      <h2><a href="{{ dir | relative_url }}">{{ idx.title | default: folder }}</a></h2>
+      <ul>
+        {%- for d in docs -%}
+        <li><a href="{{ d.url | relative_url }}">{{ d.title }}</a></li>
+        {%- endfor -%}
+      </ul>
       {%- endfor -%}
     </div>
-    <script>
-      (function () {
-        var q = document.getElementById('q');
-        q.addEventListener('input', function () {
-          var v = q.value.trim().toLowerCase();
-          document.querySelectorAll('[data-card]').forEach(function (card) {
-            var any = false;
-            card.querySelectorAll('[data-doc]').forEach(function (li) {
-              var match = !v || li.textContent.toLowerCase().indexOf(v) > -1;
-              li.hidden = !match;
-              if (match) any = true;
-            });
-            card.hidden = !any;
-          });
-        });
-      })();
-    </script>
 {% endif %}
   </main>
 </body>
