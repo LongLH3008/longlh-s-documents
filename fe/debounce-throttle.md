@@ -1,3 +1,7 @@
+---
+title: "Debounce & Throttle"
+---
+
 ### **Kỹ thuật Throttle và Debounce trong Frontend**
 
 Cả **Throttle** và **Debounce** đều là kỹ thuật giúp kiểm soát tần suất thực thi của một hàm, thường dùng để tối ưu hiệu suất trong các sự kiện xảy ra liên tục như:

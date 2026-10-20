@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-<body>
+<body class="{% if page.url == '/' %}home{% endif %}">
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
@@ -23,6 +23,44 @@
     <article class="content">
       {{ content }}
     </article>
+{% if page.url == '/' %}
+    {%- comment -%} Trang chủ: danh sách thư mục trong index.md bị ẩn bằng CSS, thay bằng thẻ tự sinh từ các trang trong từng thư mục. {%- endcomment -%}
+    <div class="search">
+      <input id="q" type="search" placeholder="Tìm tài liệu..." autocomplete="off" aria-label="Tìm tài liệu">
+    </div>
+    <div class="cards">
+      {%- for folder in site.sections -%}
+        {%- assign dir = '/' | append: folder | append: '/' -%}
+        {%- assign idx = site.pages | where: 'url', dir | first -%}
+        {%- assign docs = site.pages | where: 'dir', dir | where_exp: 'd', "d.name != 'index.md'" | sort: 'title' -%}
+      <section class="card" data-card>
+        <h2><a href="{{ dir | relative_url }}">{{ idx.title | default: folder }}</a><span class="count">{{ docs.size }}</span></h2>
+        <ul>
+          {%- for d in docs -%}
+          <li data-doc><a href="{{ d.url | relative_url }}">{{ d.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </section>
+      {%- endfor -%}
+    </div>
+    <script>
+      (function () {
+        var q = document.getElementById('q');
+        q.addEventListener('input', function () {
+          var v = q.value.trim().toLowerCase();
+          document.querySelectorAll('[data-card]').forEach(function (card) {
+            var any = false;
+            card.querySelectorAll('[data-doc]').forEach(function (li) {
+              var match = !v || li.textContent.toLowerCase().indexOf(v) > -1;
+              li.hidden = !match;
+              if (match) any = true;
+            });
+            card.hidden = !any;
+          });
+        });
+      })();
+    </script>
+{% endif %}
   </main>
 </body>
 </html>

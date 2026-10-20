@@ -1,4 +1,4 @@
-# TECHNIQUE
+# docs
 
 > Mục lục gốc của kho ghi chú kỹ thuật.
 

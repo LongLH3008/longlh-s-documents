@@ -1,3 +1,7 @@
+---
+title: "Scroll: Infinite & Virtual"
+---
+
 ## 1️⃣ **Virtual Scroll (Cuộn ảo)**
 
 Virtual Scroll giúp hiển thị một danh sách lớn mà chỉ render một phần nhỏ để tối ưu hiệu suất.

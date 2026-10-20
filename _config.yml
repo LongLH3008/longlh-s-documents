@@ -1,4 +1,4 @@
-title: TECHNIQUE
+title: docs
 description: Kho ghi chú kỹ thuật
 plugins:
   - jekyll-optional-front-matter
@@ -23,3 +23,8 @@ exclude:
   - CLAUDE.md
   - README.md
   - "*.url"
+
+sections:
+  - fe
+  - be
+  - db
