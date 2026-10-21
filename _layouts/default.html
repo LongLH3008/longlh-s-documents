@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>{% if page.url == '/' or page.title == nil %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
+  <title>{% if page.url == '/' or page.title == nil %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{%
+    endif %}</title>
   <meta name="description" content="{{ site.description }}">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon-32.png' | relative_url }}">
@@ -14,6 +16,7 @@
   <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
+
 <body class="{% if page.url == '/' %}home{% endif %}">
   <header class="site-header">
     <div class="wrap">
@@ -22,6 +25,7 @@
         <a href="{{ '/fe/' | relative_url }}">FE</a>
         <a href="{{ '/be/' | relative_url }}">BE</a>
         <a href="{{ '/db/' | relative_url }}">DB</a>
+        <a href="{{ '/js/' | relative_url }}">JS</a>
       </nav>
     </div>
   </header>
@@ -29,13 +33,14 @@
     <article class="content">
       {{ content }}
     </article>
-{% if page.url == '/' %}
-    {%- comment -%} Trang chủ: danh sách thư mục trong index.md bị ẩn bằng CSS, thay bằng danh sách bài tự sinh từ từng thư mục. {%- endcomment -%}
+    {% if page.url == '/' %}
+    {%- comment -%} Trang chủ: danh sách thư mục trong index.md bị ẩn bằng CSS, thay bằng danh sách bài tự sinh từ từng
+    thư mục. {%- endcomment -%}
     <div class="home-list">
       {%- for folder in site.sections -%}
-        {%- assign dir = '/' | append: folder | append: '/' -%}
-        {%- assign idx = site.pages | where: 'url', dir | first -%}
-        {%- assign docs = site.pages | where: 'dir', dir | where_exp: 'd', "d.name != 'index.md'" | sort: 'title' -%}
+      {%- assign dir = '/' | append: folder | append: '/' -%}
+      {%- assign idx = site.pages | where: 'url', dir | first -%}
+      {%- assign docs = site.pages | where: 'dir', dir | where_exp: 'd', "d.name != 'index.md'" | sort: 'title' -%}
       <h2><a href="{{ dir | relative_url }}">{{ idx.title | default: folder }}</a></h2>
       <ul>
         {%- for d in docs -%}
@@ -44,7 +49,8 @@
       </ul>
       {%- endfor -%}
     </div>
-{% endif %}
+    {% endif %}
   </main>
 </body>
+
 </html>
