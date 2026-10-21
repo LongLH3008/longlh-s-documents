@@ -1,30 +1,31 @@
 title: docs
 description: Kho ghi chú kỹ thuật
 plugins:
-  - jekyll-optional-front-matter
-  - jekyll-default-layout
-  - jekyll-relative-links
-  - jekyll-titles-from-headings
+      - jekyll-optional-front-matter
+      - jekyll-default-layout
+      - jekyll-relative-links
+      - jekyll-titles-from-headings
 
 optional_front_matter:
-  enabled: true
-  remove_originals: true
+      enabled: true
+      remove_originals: true
 
 relative_links:
-  enabled: true
-  collections: false
+      enabled: true
+      collections: false
 
 titles_from_headings:
-  enabled: true
-  strip_title: false
-  collections: false
+      enabled: true
+      strip_title: false
+      collections: false
 
 exclude:
-  - CLAUDE.md
-  - README.md
-  - "*.url"
+      - CLAUDE.md
+      - README.md
+      - "*.url"
 
 sections:
-  - fe
-  - be
-  - db
+      - fe
+      - be
+      - db
+      - js
