@@ -21,11 +21,11 @@
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <nav>
-        <a href="{{ '/fe/' | relative_url }}">FE</a>
-        <a href="{{ '/be/' | relative_url }}">BE</a>
-        <a href="{{ '/db/' | relative_url }}">DB</a>
-        <a href="{{ '/js/' | relative_url }}">JS</a>
+      <nav aria-label="Chuyên mục">
+        {%- for s in site.sections -%}
+        {%- assign dir = '/' | append: s.dir | append: '/' -%}
+        <a href="{{ dir | relative_url }}" {% if page.url contains dir %}aria-current="page" {% endif %}>{{ s.label | default: s.title }}</a>
+        {%- endfor -%}
       </nav>
     </div>
   </header>
@@ -34,19 +34,17 @@
       {{ content }}
     </article>
     {% if page.url == '/' %}
-    {%- comment -%} Trang chủ: danh sách thư mục trong index.md bị ẩn bằng CSS, thay bằng danh sách bài tự sinh từ từng
-    thư mục. {%- endcomment -%}
+    {%- comment -%} Trang chủ: danh sách thư mục trong index.md bị ẩn bằng CSS, thay bằng thẻ chuyên mục tự sinh từ
+    site.sections (không liệt kê bài con). {%- endcomment -%}
     <div class="home-list">
-      {%- for folder in site.sections -%}
-      {%- assign dir = '/' | append: folder | append: '/' -%}
-      {%- assign idx = site.pages | where: 'url', dir | first -%}
-      {%- assign docs = site.pages | where: 'dir', dir | where_exp: 'd', "d.name != 'index.md'" | sort: 'title' -%}
-      <h2><a href="{{ dir | relative_url }}">{{ idx.title | default: folder }}</a></h2>
-      <ul>
-        {%- for d in docs -%}
-        <li><a href="{{ d.url | relative_url }}">{{ d.title }}</a></li>
-        {%- endfor -%}
-      </ul>
+      {%- for s in site.sections -%}
+      {%- assign dir = '/' | append: s.dir | append: '/' -%}
+      {%- assign docs = site.pages | where: 'dir', dir | where_exp: 'd', "d.name != 'index.md'" -%}
+      <a class="home-card" href="{{ dir | relative_url }}">
+        <h2>{{ s.title }}</h2>
+        <p>{{ s.description }}</p>
+        <span class="count">{{ docs.size }} bài viết</span>
+      </a>
       {%- endfor -%}
     </div>
     {% endif %}

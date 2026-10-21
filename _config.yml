@@ -1,5 +1,5 @@
 title: docs
-description: Kho ghi chú kỹ thuật
+description: Kho ghi chú kỹ thuật cá nhân bằng tiếng Việt, tổng hợp kiến thức frontend, backend, database và JavaScript kèm giải thích cơ chế, ví dụ code và các lưu ý khi áp dụng thực tế.
 plugins:
       - jekyll-optional-front-matter
       - jekyll-default-layout
@@ -25,7 +25,19 @@ exclude:
       - "*.url"
 
 sections:
-      - fe
-      - be
-      - db
-      - js
+      - dir: fe
+        label: FE
+        title: Frontend
+        description: Kỹ thuật xây dựng giao diện web, tối ưu hiệu năng render và trải nghiệm cuộn, nhập liệu như debounce, throttle, infinite scroll và virtual scroll.
+      - dir: be
+        label: BE
+        title: Backend
+        description: Các mẫu thiết kế và kỹ thuật phía server giúp hệ thống đáng tin cậy, dễ mở rộng, dễ kiểm thử như idempotency key và dependency injection.
+      - dir: db
+        label: DB
+        title: Database
+        description: Cách cơ sở dữ liệu lưu trữ và truy vấn dữ liệu hiệu quả, gồm index B-Tree, page split, composite index, EXPLAIN và các chiến lược phân trang (offset, cursor).
+      - dir: js
+        label: JS
+        title: JavaScript
+        description: Ghi chú JavaScript từ nền tảng đến cơ chế cốt lõi, từ kiểu dữ liệu, ES6, DOM đến scope, closure, prototype, Promise, async/await và Event Loop.
