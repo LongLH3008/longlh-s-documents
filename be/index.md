@@ -5,3 +5,4 @@
 ## Tài liệu
 
 - [Idempotency Key](./idempotency-key.md)
+- [Dependency Injection](./dependency-injection.md)
