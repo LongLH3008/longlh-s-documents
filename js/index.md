@@ -6,8 +6,6 @@
 
 ### Bình thường
 
-Kiến thức bổ trợ, tra cứu khi cần.
-
 - [Polyfill](./01-Polyfill.md)
 - [JSON](./02-JSON.md)
 - [Date & Math](./03-Date-Math.md)
@@ -19,8 +17,6 @@ Kiến thức bổ trợ, tra cứu khi cần.
 - [First-class & Higher-order Function](./09-First-class-Higher-order-Function.md)
 
 ### Quan trọng
-
-Kiến thức nền tảng dùng hằng ngày.
 
 - [Data Type](./10-Data-Type.md)
 - [Number](./11-Number.md)
@@ -49,8 +45,6 @@ Kiến thức nền tảng dùng hằng ngày.
 - [OOP](./34-OOP.md)
 
 ### Cốt lõi
-
-Cơ chế bên trong của JavaScript, cần hiểu chắc.
 
 - [Primitive & Reference Types](./35-Primitive-Reference.md)
 - [Scope](./36-Scope.md)
