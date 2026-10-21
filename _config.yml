@@ -41,3 +41,7 @@ sections:
         label: JS
         title: JavaScript
         description: Ghi chú JavaScript từ nền tảng đến cơ chế cốt lõi, từ kiểu dữ liệu, ES6, DOM đến scope, closure, prototype, Promise, async/await và Event Loop.
+      - dir: security
+        label: SEC
+        title: Security
+        description: Bảo mật web gồm XSS, CSRF, CORS, CSP, SQL Injection, SSRF, Clickjacking, cookie an toàn và security headers, kèm định nghĩa, ví dụ và cách phòng chống.
