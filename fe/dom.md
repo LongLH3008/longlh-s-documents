@@ -14,7 +14,7 @@
 
 DOM được tổ chức như một cây phân cấp với các **node** (nút) có quan hệ cha-con:
 
-![dom](../imgs/js-dom.webp)
+![dom](../imgs/dom.webp)
 
 ---
 
