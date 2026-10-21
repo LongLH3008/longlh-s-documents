@@ -1,3 +1,5 @@
+[← Mục lục](./index.md)
+
 # Open Redirect
 
 ## 1. Định nghĩa kỹ thuật

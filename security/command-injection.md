@@ -1,3 +1,5 @@
+[← Mục lục](./index.md)
+
 # Command Injection và Path Traversal
 
 ## 1. Định nghĩa kỹ thuật

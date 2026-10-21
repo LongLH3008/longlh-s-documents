@@ -1,3 +1,5 @@
+[← Mục lục](./index.md)
+
 # SQL Injection
 
 ## 1. Định nghĩa kỹ thuật

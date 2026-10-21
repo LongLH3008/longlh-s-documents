@@ -1,3 +1,5 @@
+[← Mục lục](./index.md)
+
 # CORS (Cross-Origin Resource Sharing)
 
 ## 1. Định nghĩa kỹ thuật

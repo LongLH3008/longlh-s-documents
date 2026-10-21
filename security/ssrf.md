@@ -1,3 +1,5 @@
+[← Mục lục](./index.md)
+
 # SSRF (Server-Side Request Forgery)
 
 ## 1. Định nghĩa kỹ thuật

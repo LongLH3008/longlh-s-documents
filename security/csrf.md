@@ -1,3 +1,5 @@
+[← Mục lục](./index.md)
+
 # CSRF (Cross-Site Request Forgery)
 
 ## 1. Định nghĩa kỹ thuật

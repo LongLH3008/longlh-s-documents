@@ -1,3 +1,5 @@
+[← Mục lục](./index.md)
+
 # XSS (Cross-Site Scripting)
 
 ## 1. Định nghĩa kỹ thuật
