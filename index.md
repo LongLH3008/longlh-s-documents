@@ -5,3 +5,4 @@
 - [Frontend](./fe/index.md)
 - [Backend](./be/index.md)
 - [Database](./db/index.md)
+- [JavaScript](./js/index.md)
