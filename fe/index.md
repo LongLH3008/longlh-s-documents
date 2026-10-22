@@ -2,6 +2,11 @@
 
 > Mục lục các kỹ thuật frontend.
 
+## Folder con
+
+- [Rendering Strategies](./rendering/index.md)
+- [Browser Storage và Credentials](./storage/index.md)
+
 ## Tài liệu
 
 ### Trình duyệt và DOM
